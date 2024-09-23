@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="src/assets/styles.css">
+</head>
+<body>
+    <div id="game">
+        <h1>Tu Mascota Virtual</h1>
+        <div id="pou"></div>
+        <div id="stats">
+            <p>Hambre: <span id="hunger">100</span></p>
+            <p>Energía: <span id="energy">100</span></p>
+            <p>Felicidad: <span id="happiness">100</span></p>
+        </div>
+        <div id="actions">
+            <button id="feed-btn">Alimentar</button>
+            <button id="sleep-btn">Dormir</button>
+            <button id="play-btn">Jugar</button>
+        </div>
+        
+      
+    </div>
+    <div id="fruit-ninja-game" style="display: none;">
+        <canvas id="fruit-ninja-canvas"></canvas>
+        <button id="exit-ninja-btn">Salir del Mini-juego</button>
+    </div>
+    
+    <script src="src/main.js" type="module"></script>
+</body>
+</html>

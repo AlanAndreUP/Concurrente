@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+    --primary-color: #6200ee;
+    --secondary-color: #03dac6;
+    --background-color: #f5f5f5;
+    --text-color: #333;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.3s ease;
+}
+
+#game-container {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    padding: 30px;
+    text-align: center;
+    max-width: 700px;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#game-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px var(--shadow-color);
+}
+
+h1 {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+#pou {
+    width: 180px;
+    height: 180px;
+    background-image: url('https://imgs.search.brave.com/_W7GDR5jgs3Kcq7XeAbXHX5H3eyJG9CgIZtYLysBLs8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/ZWx1bml2ZXJzYWwu/Y29tLm14L3Jlc2l6/ZXIvdjIvNUdFUk81/WVhFSkI3SEFNSjYy/N0tCU01QS0UuanBn/P2F1dGg9YTc2NWM2/ZWI1MTljNTM3M2E1/NzBiZGYxNzg5Y2Nh/MGZjMTFiODM2YjI3/Y2I1MmZmYjdkYTYw/NjljZTY1NTA3MCZz/bWFydD10cnVlJmhl/aWdodD02MjA');
+    background-size: cover;
+    margin: 30px auto;
+    border-radius: 50%;
+    transition: transform 0.5s ease;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+#status {
+    margin-bottom: 30px;
+}
+
+.status-bar {
+    background-color: #e0e0e0;
+    border-radius: 15px;
+    height: 25px;
+    margin: 15px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.status-bar-fill {
+    height: 100%;
+    transition: width 0.5s ease;
+    border-radius: 15px;
+}
+
+#hunger-bar .status-bar-fill { background-color: #ff9800; }
+#energy-bar .status-bar-fill { background-color: #2196f3; }
+#happiness-bar .status-bar-fill { background-color: #4caf50; }
+
+.status-bar::after {
+    content: attr(data-label);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+#actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+button {
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    font-weight: 600;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px var(--shadow-color);
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+#game {
+    text-align: center;
+}
+
+#fruit-ninja-game {
+    text-align: center;
+    position: relative;
+}
+
+canvas {
+    border: 3px solid var(--primary-color);
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px var(--shadow-color);
+    transition: box-shadow 0.3s ease;
+}
+
+canvas:hover {
+    box-shadow: 0 8px 16px var(--shadow-color);
+}
+
+@media (max-width: 600px) {
+    #game-container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    #pou {
+        width: 150px;
+        height: 150px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
